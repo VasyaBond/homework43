@@ -8,7 +8,7 @@ class Program
         {
             return n + 1;
         }
-        else if (m > 0 && n == 0)
+        else if (n == 0)
         {
             return Ackermann(m - 1, 1);
         }
@@ -18,25 +18,14 @@ class Program
         }
     }
 
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.Write("Введите значение m: ");
-        if (int.TryParse(Console.ReadLine(), out int m))
-        {
-            Console.Write("Введите значение n: ");
-            if (int.TryParse(Console.ReadLine(), out int n))
-            {
-                int result = Ackermann(m, n);
-                Console.WriteLine($"A({m}, {n}) = {result}");
-            }
-            else
-            {
-                Console.WriteLine("n должно быть целым числом.");
-            }
-        }
-        else
-        {
-            Console.WriteLine("m должно быть целым числом.");
-        }
+        int m1 = 2, n1 = 3;
+        int result1 = Ackermann(m1, n1);
+        Console.WriteLine($"A({m1}, {n1}) = {result1}");
+
+        int m2 = 3, n2 = 2;
+        int result2 = Ackermann(m2, n2);
+        Console.WriteLine($"A({m2}, {n2}) = {result2}");
     }
 }
